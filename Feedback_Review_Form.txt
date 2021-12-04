@@ -1,6 +1,11 @@
+
 step 0: create project: 
 
 step 0.1: make folder as 'feedback_Review_Form' in prefered location.
 step 0.2: open terminal and create virtual env - 'mkvirtualenv projectname<feedback_Review_Form>'
 step 0.3: pip3 install django
 step 0.4: django-admin startproject feedback
+step 0.5: github
+https://github.com/shivshankar31/Feedback_Review_Forms.git
+open terminal from the folder
+
