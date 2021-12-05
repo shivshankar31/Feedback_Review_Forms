@@ -1,3 +1,7 @@
+# step 1.6: In settings.py file, include app name to INSTALLED_APP list.
+
+
+
 """
 Django settings for feedback project.
 
@@ -31,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'review',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,3 +1,8 @@
+# step 1.5: In main project urls.py file, import 'include' function, and add the path of created app urls.py file. 
+
+
+
+
 """feedback URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,8 +19,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('feedback.urls'))
 ]
