@@ -1,4 +1,5 @@
 <!step 1.7: create review.html file inside template/review folder!>
+<!step 2.1: create test form in review.html file!>
 
 
 
@@ -8,18 +9,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock title %} </title>
-    <link rel="stylesheet" href="{% static "app.css" %}">
-    {% block css_file %} 
-    {% endblock css_file %}
+    <title> Review </title>
+
 </head>
 
 <body>
-
-  {% block content %}
-   
-       
-  {% endblock content %}
-
+    <form>
+        <lable for= "username"> Your Name </lable>
+        <input id = "username" name="username" type = "text">
+        <button> Semd </button>
+    </form>
+  
 </body>
 </html>
