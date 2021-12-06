@@ -1,5 +1,6 @@
 <!step 1.7: create review.html file inside template/review folder!>
 <!step 2.1: create test form in review.html file!>
+<!step 4.1: add csrf_token to the form to protect from hackers!>
 
 
 
@@ -14,10 +15,11 @@
 </head>
 
 <body>
-    <form>
+    <form method = "POST">
+        {% csrf_token %}
         <lable for= "username"> Your Name </lable>
         <input id = "username" name="username" type = "text">
-        <button> Semd </button>
+        <button type = "submit"> Send </button>
     </form>
   
 </body>

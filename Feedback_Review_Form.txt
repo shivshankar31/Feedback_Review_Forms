@@ -30,5 +30,12 @@ step 2: 133: adding test form in html.
     Step 2.2: add the created html file to views.py to render
 now run the server to check the form display.
 
+step 3: 134: GET and POST
+    step 3.1: for us we need to post the data.
+
+step 4: 135: CSRF protection to protect user data form.
+it generats token for verification.
+    step 4.1: add csrf_token to the form to protect from hackers
+
 
 
