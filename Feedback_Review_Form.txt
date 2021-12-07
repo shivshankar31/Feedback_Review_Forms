@@ -64,4 +64,7 @@ step 9: 141: Customizing the Rendered HTML
     step 9.1: insted of rendering the complete form, we can render form fields one by one and change the allignment using '.'
     step 9.2: Also, we can create seprate <div> class to assign style as well. also we can use if condition inside the class.
 
+step 10: 142: Adding styles.css to form
+    step 10.1: add static and review folder. create styles.css file.
+    step 10.2: in reviews.html, load static and add the css file link to stylesheet with {% static ""%}
 

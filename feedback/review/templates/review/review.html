@@ -4,7 +4,12 @@
 <!step 6.3: remove input field and call the form inside html, remove input field, as all the fields are mentioned in the forms.py!>
 <!step 9.1: insted of rendering the complete form, we can render form fields one by one and change the allignment using '.'!>
 <!step 9.2: Also, we can create seprate div class to assign style as well. also we can use if condition inside the class.!>
+<!    step 10.2: in reviews.html, load static and add the css file link to stylesheet with {% static ""%}!>
 
+
+
+
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Review </title>
+    <link rel="stylesheet", href="{% static "review/styles.css" %}">
 
 </head>
 
