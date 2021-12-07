@@ -1,6 +1,7 @@
 <!step 1.7: create review.html file inside template/review folder!>
 <!step 2.1: create test form in review.html file!>
 <!step 4.1: add csrf_token to the form to protect from hackers!>
+<!step 6.3: remove input field and call the form inside html, remove input field, as all the fields are mentioned in the forms.py!>
 
 
 
@@ -17,8 +18,7 @@
 <body>
     <form action = "/" method = "POST">
         {% csrf_token %}
-        <lable for= "username"> Your Name </lable>
-        <input id = "username" name="username" type = "text">
+        {{ form }}
         <button type = "submit"> Send </button>
     </form>
   
