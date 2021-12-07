@@ -60,6 +60,8 @@ step 7: 139: validation with django forms
 step 8: 140:customizing the form controls
     step:8.1: in forms.py, we can chage the lable, max_length, required(*)- by default it set to be true, error_massages
 
-
+step 9: 141: Customizing the Rendered HTML
+    step 9.1: insted of rendering the complete form, we can render form fields one by one and change the allignment using '.'
+    step 9.2: Also, we can create seprate <div> class to assign style as well. also we can use if condition inside the class.
 
 

@@ -2,7 +2,8 @@
 <!step 2.1: create test form in review.html file!>
 <!step 4.1: add csrf_token to the form to protect from hackers!>
 <!step 6.3: remove input field and call the form inside html, remove input field, as all the fields are mentioned in the forms.py!>
-
+<!step 9.1: insted of rendering the complete form, we can render form fields one by one and change the allignment using '.'!>
+<!step 9.2: Also, we can create seprate div class to assign style as well. also we can use if condition inside the class.!>
 
 
 <!DOCTYPE html>
@@ -18,7 +19,12 @@
 <body>
     <form action = "/" method = "POST">
         {% csrf_token %}
-        {{ form }}
+        <div class="form_control {% if form.user_name.errors %} error {% endif%}">
+        {{ form.user_name.label_tag }}
+        {{ form.user_name }}
+        {{ form.errors}}
+        </div>
+        
         <button type = "submit"> Send </button>
     </form>
   
