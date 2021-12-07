@@ -47,7 +47,7 @@ step 5: 136: handling form subimission, redirect after submitting
 
 137: this is about manual form handling, insted we are using djanog form class in the next video.
 
-step 6: 137: create forms.py, create class and insert form on the index.html
+step 6: 138: create forms.py, create class and insert form on the index.html
     step 6.1: create forms.py file and import forms form django, and create class ReviewForm, 
     step 6.2: call the created form class inside view.py forms.ReviewForm now, validate post or get method, also is_valid is a inbuilt method in forms, render the html 
                 nested if is used to check post, get and is_valid
