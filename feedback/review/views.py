@@ -20,13 +20,13 @@ from .import forms
 
 
 def review(request):
-    if request.method == "POST": 
+    if request.method == "POST": # this workd if its a POST method or not
         form = forms.ReviewForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
             return HttpResponseRedirect("/thankyou")
-    
-    form = forms.ReviewForm()
+    else: # this part works if its GET metnod
+        form = forms.ReviewForm()
 
     return render (request, "review/review.html", {
         "form": form

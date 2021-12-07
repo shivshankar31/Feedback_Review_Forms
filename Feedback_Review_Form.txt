@@ -53,7 +53,9 @@ step 6: 138: create forms.py, create class and insert form on the index.html
                 nested if is used to check post, get and is_valid
     step 6.3: remove input field and call the form inside html, remove input field, as all the fields are mentioned in the forms.py 
     
-
+step 7: 139: validation with django forms
+    STEP 7.1: add else part so that form is validated befor it reloads, by using this user entered datas will be saved if the validation got filed, user will not be forced 
+              to renter the date again and again.
 
 
 
