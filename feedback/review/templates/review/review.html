@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form method = "POST">
+    <form action = "/" method = "POST">
         {% csrf_token %}
         <lable for= "username"> Your Name </lable>
         <input id = "username" name="username" type = "text">

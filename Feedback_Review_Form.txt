@@ -37,5 +37,14 @@ step 4: 135: CSRF protection to protect user data form.
 it generats token for verification.
     step 4.1: add csrf_token to the form to protect from hackers
 
+step 5: 136: handling form subimission, redirect after submitting
+    step 5.1: in review.html, add action to the form so that it will redirect to another page, by default it will load the localhost.
+    step 5.2: create thankyou.html file to use it after the data is submited.
+    step 5.3: as we get GET and POST in the same url, we need to identify using IF statment and redirect to thankyou.html, we can also render inside if statment 
+                but it is not a good pratice. create a seperate function for thankyou and render the html page there.
+    step 5.4: inclding HttpResponceRedirect we can add the extension url over there.
+    step 5.6: include PATH in urls.py and call the thankyou function.
+
+
 
 
