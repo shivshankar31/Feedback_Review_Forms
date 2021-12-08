@@ -68,3 +68,8 @@ step 10: 142: Adding styles.css to form
     step 10.1: add static and review folder. create styles.css file.
     step 10.2: in reviews.html, load static and add the css file link to stylesheet with {% static ""%}
 
+step 11: 143: adding more fields
+        step 11.1: in forms.py, add feedbask field and rating field.
+        step 11.2: in review.html, use for loop to to generate the fields automaticly.
+
+

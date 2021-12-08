@@ -4,7 +4,8 @@
 <!step 6.3: remove input field and call the form inside html, remove input field, as all the fields are mentioned in the forms.py!>
 <!step 9.1: insted of rendering the complete form, we can render form fields one by one and change the allignment using '.'!>
 <!step 9.2: Also, we can create seprate div class to assign style as well. also we can use if condition inside the class.!>
-<!    step 10.2: in reviews.html, load static and add the css file link to stylesheet with {% static ""%}!>
+<!step 10.2: in reviews.html, load static and add the css file link to stylesheet with  static!>
+<!step 11.2: in review.html, use for loop to to generate the fields automaticly!>
 
 
 
@@ -25,11 +26,13 @@
 <body>
     <form action = "/" method = "POST">
         {% csrf_token %}
-        <div class="form_control {% if form.user_name.errors %} error {% endif%}">
-        {{ form.user_name.label_tag }}
-        {{ form.user_name }}
-        {{ form.errors}}
+        {% for fields in form %}
+        <div class="form_control {% if fields.errors %} error {% endif%}">
+        {{ fields.label_tag }}
+        {{ fields }}
+        {{ fields.errors}}
         </div>
+        {% endfor %}
         
         <button type = "submit"> Send </button>
     </form>
