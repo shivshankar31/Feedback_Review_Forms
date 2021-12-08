@@ -78,5 +78,7 @@ step 12: 144: save to database
     step 12.3: call the model into a variable and retrive the cleaned_data of each field and save to a list.
     step 12.4: now save the variable. now populate some data and submit to view Db table.
 
-
+step 13: 145: ModelForm - Auto generate form from models
+    step 13.1: In forms.py. comment the old class and create a new class with "forms.ModelForm" as class argument. A nested class "class Meta:" is created and assign the created models.py
+    step 13.2: fields, exception are used to select fields to create form.  
 
