@@ -14,7 +14,11 @@
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+
+# from feedback.review.models import Review
 from .import forms
+from .models import Review
+
 
 # Create your views here.
 
@@ -23,6 +27,8 @@ def review(request):
     if request.method == "POST": # this workd if its a POST method or not
         form = forms.ReviewForm(request.POST)
         if form.is_valid():
+            review_data = Review(user_name = form.cleaned_data['user_name'], review_text = form.cleaned_data['feedback'], rating = form.cleaned_data['rating'])
+            review_data.save()
             print(form.cleaned_data)
             return HttpResponseRedirect("/thankyou")
     else: # this part works if its GET metnod

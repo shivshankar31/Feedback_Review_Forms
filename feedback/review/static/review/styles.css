@@ -12,7 +12,7 @@ body {
     margin: 3rem auto;
     width: 90%;
     max-width: 25rem;
-    padding: 1rem;
+    padding: 3rem;
     border-radius: 12px;
     background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -50,12 +50,13 @@ body {
     border-color: #1f0050;
     outline: none;
     background-color: #f4eeff;
+    margin-bottom: 5rem;
   }
   
   .form-control label {
     font-weight: bold;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5rem;
   }
   
   .errorlist {
