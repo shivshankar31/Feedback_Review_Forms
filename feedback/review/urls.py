@@ -9,5 +9,5 @@ from .import views
 
 urlpatterns = [
     path("", views.ReviewView.as_view()),
-    path('thankyou', views.thankyou )
+    path('thankyou', views.ThankyouView.as_view())
 ]

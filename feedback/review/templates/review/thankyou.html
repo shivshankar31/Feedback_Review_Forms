@@ -1,5 +1,6 @@
 <!step 5.2: create thankyou.html file to use it after the data is submited.!>
 <!step 17.3: extend thankyou.html file with the base.html!>
+<!step 18.5: add {{message }} to thankyou.html.!>
 
 
 {% extends 'review/base.html' %}
@@ -9,4 +10,5 @@
     
 {% block content %}
     <h2>Thank You!</h2>
+    <p> {{ message }} </p>
 {% endblock %}

@@ -101,3 +101,10 @@ step 17: 152: Add base templet and extends to other existing page
     step 17.2: extend review.html file with the base.html
     step 17.3: extend thankyou.html file with the base.html
     step 17.3: In views.py, post function return HttpResponceRedirect fixed
+
+step 18: 153: TempleteView
+    step 18.1: import - from django.views.generic.base import TemplateView
+    step 18.2: in views.py, remove thankyou function and create ThankyouView class and call TemplateView as arg
+    step 18.3: use the keyword template_name to render the html page, no need to use retutn or render methods, 
+    step 18.4: we can convert static to dynamic HTML page using predefind get_context_data function
+    step 18.5: add {{message }} to thankyou.html.

@@ -8,6 +8,11 @@
 # step 15.1: remove all cleaned data and save the form, model will save the data and save that to DB.
 # step 16.1: in views.py, import django.view Views and create class ReviewView(View), and create get and post function.
 # step 17.3: In views.py, post function return HttpResponceRedirect fixed
+# step 18.1: import - from django.views.generic.base import TemplateView
+# step 18.2: in views.py, remove thankyou function and create ThankyouView class and call TemplateView as arg
+# step 18.3: use the keyword template_name to render the html page, no need to use retutn or render methods, 
+# step 18.4: we can convert static to dynamic HTML page using predefind get_context_data function
+    
 
 
 
@@ -16,6 +21,7 @@
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 # from feedback.review.models import Review
 from .forms import ReviewForm
@@ -42,6 +48,21 @@ class ReviewView(View):
                 'form': form
             })
 
+# method 1 create class and def function 
+# class ThankyouView(View):
+#      def get(self,request):
+#         return render(request, "review/thankyou.html")
+
+# method 2: import TemplateView
+
+class ThankyouView(TemplateView):
+    template_name = 'review/thankyou.html'
+
+    def get_context_data(self, **kwargs):
+        context1 = super().get_context_data(**kwargs)
+        context1 ['message'] = 'Thank you once again!'
+        return context1
+    
 
 # def review(request):
 #     if request.method == "POST": # this workd if its a POST method or not
@@ -61,5 +82,5 @@ class ReviewView(View):
 
 
 
-def thankyou(request):
-    return render(request, "review/thankyou.html")
+# def thankyou(request):
+#     return render(request, "review/thankyou.html")
