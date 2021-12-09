@@ -108,3 +108,9 @@ step 18: 153: TempleteView
     step 18.3: use the keyword template_name to render the html page, no need to use retutn or render methods, 
     step 18.4: we can convert static to dynamic HTML page using predefind get_context_data function
     step 18.5: add {{message }} to thankyou.html.
+
+step 19: 154: Review list - using TemplateView
+    step 19.1: create new reviewlist.html, and extend from base
+    step 19.2: In views.py, create a new class ReviewList and pass TemplateView argument.
+    step 19.3: assign template_name and call get_context_data function, now call objects.all() and populate the data.
+    step 19.4: add new path in urls.py 

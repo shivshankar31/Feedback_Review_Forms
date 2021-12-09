@@ -12,6 +12,8 @@
 # step 18.2: in views.py, remove thankyou function and create ThankyouView class and call TemplateView as arg
 # step 18.3: use the keyword template_name to render the html page, no need to use retutn or render methods, 
 # step 18.4: we can convert static to dynamic HTML page using predefind get_context_data function
+# step 19.2: In views.py, create a new class ReviewList and pass TemplateView argument.
+# step 19.3: assign template_name and call get_context_data function, now call objects.all() and populate the data.
     
 
 
@@ -62,7 +64,16 @@ class ThankyouView(TemplateView):
         context1 = super().get_context_data(**kwargs)
         context1 ['message'] = 'Thank you once again!'
         return context1
-    
+
+class ReviewList(TemplateView):
+    template_name = 'review/reviewlist.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        reviewlist = Review.objects.all()
+        context ['reviews'] = reviewlist
+        return context
+
 
 # def review(request):
 #     if request.method == "POST": # this workd if its a POST method or not

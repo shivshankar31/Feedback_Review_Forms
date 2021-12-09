@@ -1,0 +1,18 @@
+<!step 19.1: create new reviewlist.html, and extend from base!>
+
+{% extends 'review/base.html' %}
+
+{% block title %}Review List{% endblock  %}
+
+{% block content %}
+    <ul>
+        {% for review in reviews %}
+        <li>{{review.user_name}}  (Reating: {{review.rating}})</li>
+        
+        {% endfor %}
+
+    </ul>
+
+
+
+{% endblock  %}
