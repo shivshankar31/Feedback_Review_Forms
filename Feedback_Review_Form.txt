@@ -89,3 +89,7 @@ we can follow both ways, which ever is convenent, its all upto us.
 
 step 15: 147: saving data with ModelForm
     step 15.1: remove all cleaned data and save the form, model will save the data and save that to DB.
+
+step 16: 148: convert views.py into class view
+    step 16.1: in views.py, import django.view Views and create class ReviewView(View), and create get and post function.
+    step 16.2: in urls.py, add .as_view().
