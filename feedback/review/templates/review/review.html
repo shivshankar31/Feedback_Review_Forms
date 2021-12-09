@@ -6,36 +6,26 @@
 <!step 9.2: Also, we can create seprate div class to assign style as well. also we can use if condition inside the class.!>
 <!step 10.2: in reviews.html, load static and add the css file link to stylesheet with  static!>
 <!step 11.2: in review.html, use for loop to to generate the fields automaticly!>
+<!step 17.2: extend review.html file with the base.html!>
 
 
 
 
-{% load static %}
+{% extends 'review/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Review </title>
-    <link rel="stylesheet", href="{% static "review/styles.css" %}">
+{% block title %} Review {% endblock  %}
+   
 
-</head>
-
-<body>
+{% block content %}
     <form action = "/" method = "POST">
         {% csrf_token %}
         {% for fields in form %}
-        <div class="form_control {% if fields.errors %} error {% endif%}">
-        {{ fields.label_tag }}
-        {{ fields }}
-        {{ fields.errors}}
-        </div>
+            <div class="form_control {% if fields.errors %} error {% endif%}">
+            {{ fields.label_tag }}
+            {{ fields }}
+            {{ fields.errors}}
+            </div>
         {% endfor %}
-        
         <button type = "submit"> Send </button>
     </form>
-  
-</body>
-</html>
+{% endblock  %}

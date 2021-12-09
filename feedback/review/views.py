@@ -7,6 +7,7 @@
             # nested if is used to check post, get and is_valid
 # step 15.1: remove all cleaned data and save the form, model will save the data and save that to DB.
 # step 16.1: in views.py, import django.view Views and create class ReviewView(View), and create get and post function.
+# step 17.3: In views.py, post function return HttpResponceRedirect fixed
 
 
 
@@ -35,7 +36,9 @@ class ReviewView(View):
         form = ReviewForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'review/review.html', {
+            return HttpResponseRedirect('/thankyou')
+            
+        return render(request, 'review/review.html', {
                 'form': form
             })
 

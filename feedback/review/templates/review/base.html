@@ -1,0 +1,26 @@
+<!step 17.1: create base.html under review!>
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+    {% block title %}
+    
+    {% endblock %}
+    </title>
+    <link rel="stylesheet", href="{% static 'review/styles.css' %}">
+</head>
+<body>
+    {% block content %}
+
+
+    {% endblock %}
+</body>
+</html>

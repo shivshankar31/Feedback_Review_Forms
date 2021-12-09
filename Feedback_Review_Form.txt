@@ -93,3 +93,11 @@ step 15: 147: saving data with ModelForm
 step 16: 148: convert views.py into class view
     step 16.1: in views.py, import django.view Views and create class ReviewView(View), and create get and post function.
     step 16.2: in urls.py, add .as_view().
+
+151: In this section we will be learning about Templete views, list & detail views, Form view - create, update, delete views
+
+step 17: 152: Add base templet and extends to other existing page
+    step 17.1: create base.html under review
+    step 17.2: extend review.html file with the base.html
+    step 17.3: extend thankyou.html file with the base.html
+    step 17.3: In views.py, post function return HttpResponceRedirect fixed
