@@ -82,3 +82,10 @@ step 13: 145: ModelForm - Auto generate form from models
     step 13.1: In forms.py. comment the old class and create a new class with "forms.ModelForm" as class argument. A nested class "class Meta:" is created and assign the created models.py
     step 13.2: fields, exception are used to select fields to create form.  
 
+step 14: 146: ModelForm creating labels , error_massages
+    step 14.1: In forms.py, under class meta: add lable and error_message 
+
+we can follow both ways, which ever is convenent, its all upto us.
+
+step 15: 147: saving data with ModelForm
+    step 15.1: remove all cleaned data and save the form, model will save the data and save that to DB.

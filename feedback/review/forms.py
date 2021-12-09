@@ -1,6 +1,7 @@
 # step 6.1: create forms.py file and import forms form django, to handle forms and validation automaticly
 # step:8.1: in forms.py, we can chage the lable, max_length, required(*)- by default it set to be true, error_massages
 # step 11.1: in forms.py, add feedbask field and rating field.
+# step 14.1: In forms.py, under class meta: add lable and error_message
 
 
 
@@ -29,3 +30,16 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = '__all__'
+
+        labels = {
+            'user_name' : 'Your Name',
+            'review_text' : 'Your Feedback',
+            'rating' : 'Your Rating'
+        }
+        error_messages = {
+            'user_name' : {
+            'required' : 'This field must not be empty',
+            'max_length': 'Length of your name should not be more than 20'
+        },
+        
+        }
