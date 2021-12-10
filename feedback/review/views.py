@@ -15,6 +15,8 @@
 # step 19.2: In views.py, create a new class ReviewList and pass TemplateView argument.
 # step 19.3: assign template_name and call get_context_data function, now call objects.all() and populate the data.
 # step 20.2: In views.py, create class for detailview and assign the template_name, call get_context_data function, use **kwargs from the function in get() populate the id using primarykey (Pk)
+# step 20.1: In views.py, import "from django.views.generic import ListView" 
+# step 20.2: create a class with ListView and assign the html, assign model = Review (model class name), this will populate the list, but change the for loop to "object_list". if you like to user alis name use context_object_name varibal and assign the prefered name.
 
 
 
@@ -22,10 +24,11 @@
 
 
 
+from django.db import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-
+from django.views.generic import ListView
 # from feedback.review.models import Review
 from .forms import ReviewForm
 from .models import Review
@@ -58,6 +61,9 @@ class ReviewView(View):
 
 # method 2: import TemplateView
 
+
+
+
 class ThankyouView(TemplateView):
     template_name = 'review/thankyou.html'
 
@@ -66,14 +72,23 @@ class ThankyouView(TemplateView):
         context1 ['message'] = 'Thank you once again!'
         return context1
 
-class ReviewList(TemplateView):
-    template_name = 'review/reviewlist.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        reviewlist = Review.objects.all()
-        context ['reviews'] = reviewlist
-        return context
+
+# method 1: list view
+# class ReviewList(TemplateView):
+#     template_name = 'review/reviewlist.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         reviewlist = Review.objects.all()
+#         context ['reviews'] = reviewlist
+#         return context
+
+# method 2: list view using ListView method.
+class ReviewList(ListView):
+    template_name = 'review/reviewlist.html'
+    model = Review # you have change the name to "object_list" in html page.
+    context_object_name = 'reviews' #you can give you own name using this variable.
 
 
 class ReviewDetailview(TemplateView):

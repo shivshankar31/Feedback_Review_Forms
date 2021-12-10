@@ -120,3 +120,6 @@ step 20: 155: detail review view
     step 20.2: In views.py, create class for detailview and assign the template_name, call get_context_data function, use **kwargs from the function in get() populate the id using primarykey (Pk)
     step 20.3: In urls.py, assign the path, also generate the extension using <int:id>.
     
+step 20: 156: method 2 ListView
+    step 20.1: In views.py, import "from django.views.generic import ListView" 
+    step 20.2: create a class with ListView and assign the html, assign model = Review (model class name), this will populate the list, but change the for loop to "object_list". if you like to user alis name use context_object_name varibal and assign the prefered name.
