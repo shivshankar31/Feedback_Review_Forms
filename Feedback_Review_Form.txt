@@ -123,3 +123,8 @@ step 20: 155: detail review view
 step 20: 156: method 2 ListView
     step 20.1: In views.py, import "from django.views.generic import ListView" 
     step 20.2: create a class with ListView and assign the html, assign model = Review (model class name), this will populate the list, but change the for loop to "object_list". if you like to user alis name use context_object_name varibal and assign the prefered name.
+
+step 21: 157: menthod 2 DetailView
+    step 21.1: import DetailView form django.views.generic 
+    step 21.2: In views.py, create new class and user DetailView as arg, template_name, model need to assign.
+    step 21.3: In urls.py, convert <int:id> to <int:pk>

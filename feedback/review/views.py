@@ -17,7 +17,8 @@
 # step 20.2: In views.py, create class for detailview and assign the template_name, call get_context_data function, use **kwargs from the function in get() populate the id using primarykey (Pk)
 # step 20.1: In views.py, import "from django.views.generic import ListView" 
 # step 20.2: create a class with ListView and assign the html, assign model = Review (model class name), this will populate the list, but change the for loop to "object_list". if you like to user alis name use context_object_name varibal and assign the prefered name.
-
+# step 21.1: import DetailView form django.views.generic 
+# step 21.2: In views.py, create new class and user DetailView as arg, template_name, model need to assign.
 
 
 
@@ -28,7 +29,8 @@ from django.db import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView
+from django.views.generic import ListView , DetailView
+
 # from feedback.review.models import Review
 from .forms import ReviewForm
 from .models import Review
@@ -90,17 +92,22 @@ class ReviewList(ListView):
     model = Review # you have change the name to "object_list" in html page.
     context_object_name = 'reviews' #you can give you own name using this variable.
 
+# method 1: detail view
+# class ReviewDetailview(TemplateView):
+#     template_name = 'review/details.html'
 
-class ReviewDetailview(TemplateView):
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         revied_id = kwargs['id']
+#         detailview = Review.objects.get(pk=revied_id) # pk = primarykey
+#         context ['reviewdetail'] = detailview
+#         return context
+
+# method 2: detail view using DetailView
+class ReviewDetailview(DetailView):
     template_name = 'review/details.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        revied_id = kwargs['id']
-        detailview = Review.objects.get(pk=revied_id) # pk = primarykey
-        context ['reviewdetail'] = detailview
-        return context
-
+    model = Review # you can use "object"
+    context_object_name = 'reviewdetail' # if you like to user alise name insted of object. you can use this.
 
 # def review(request):
 #     if request.method == "POST": # this workd if its a POST method or not
