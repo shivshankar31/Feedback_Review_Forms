@@ -13,3 +13,8 @@ step 2: 164: make file upload work
 (Note: When you are writing client-side code: use multipart/form-data when your form includes any <input type="file"> elements)
     step 2.2: In views.py, temp create print statemnt to check the file upload is working or not, and add return HTTP responce 
 referance: file upload class - https://docs.djangoproject.com/en/3.2/ref/files/uploads/
+
+step 3: 165: Storing Uploaded Files Native Approach
+    step 3.1: In views.py, create a function store_file using with statment as we are handling the file. - this will work only for jpg file.
+(Note: with statment referance: https://www.geeksforgeeks.org/with-statement-in-python/)
+    step 3.2: insted of printing the image name, use the function store_file, now create a temp folder and try upload a file now.
