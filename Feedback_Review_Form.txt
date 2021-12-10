@@ -137,5 +137,9 @@ step 21: 157: menthod 2 DetailView
         Its upto you where to use which type of views , its completly based on us.
 
 step 22: 159:FormView - to render, POST the data to DB for a form.
-step 22.1: In views.py, add from django.views.generic.edit import FormView
-step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
+    step 22.1: In views.py, add from django.views.generic.edit import FormView
+    step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
+
+step 23: 160: CreateView - model, form_class, template_name, success_url
+which created the form, validate and save the form automaticly.
+    step 23.1: In views.py, create class and call CreateView as arg, instantiate model, form_class, template_name and success_url. 

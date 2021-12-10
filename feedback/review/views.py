@@ -21,7 +21,7 @@
 # step 21.2: In views.py, create new class and user DetailView as arg, template_name, model need to assign.
 # step 22.1: In views.py, add from django.views.generic.edit import FormView
 # step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
-
+# step 23.1: In views.py, create class and call CreateView as arg, instantiate model, form_class, template_name and success_url.
 
 
 
@@ -31,7 +31,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView , DetailView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView, FormView
 
 # from feedback.review.models import Review
 from .forms import ReviewForm
@@ -41,14 +41,24 @@ from django.views import View
 
 # Create your views here.
 
-class ReviewView(FormView): 
+# method 3: which created the form, validate and save
+class ReviewView(CreateView):
+    model = Review
+    # if we use the below than we cannot sepcify lables and error messages, alternatively we can use 
+    # feilds = '__all__' # to populate all fields as we did in ModelForms
     form_class = ReviewForm
     template_name = 'review/review.html'
     success_url = 'thankyou'
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+# method 2 to specify forms
+# class ReviewView(FormView): 
+#     form_class = ReviewForm
+#     template_name = 'review/review.html'
+#     success_url = 'thankyou'
+
+#     def form_valid(self, form):
+#         form.save()
+#         return super().form_valid(form)
 
 # method 1: for get and post
 # class ReviewView(View):
