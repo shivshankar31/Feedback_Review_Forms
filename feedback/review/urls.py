@@ -2,6 +2,8 @@
 # step 5.6: include PATH in urls.py and call the thankyou function.
 # step 16.2: in urls.py, add .as_view().
 # step 19.4: add new path in urls.py
+# step 20.3: In urls.py, assign the path, also generate the extension using <int:id>.
+
 
 
 
@@ -11,5 +13,6 @@ from .import views
 urlpatterns = [
     path("", views.ReviewView.as_view()),
     path('thankyou', views.ThankyouView.as_view()),
-    path('reviewlist', views.ReviewList.as_view())
+    path('reviewlist', views.ReviewList.as_view()),
+    path('reviewlist/<int:id>',views.ReviewDetailview.as_view())
 ]

@@ -14,7 +14,8 @@
 # step 18.4: we can convert static to dynamic HTML page using predefind get_context_data function
 # step 19.2: In views.py, create a new class ReviewList and pass TemplateView argument.
 # step 19.3: assign template_name and call get_context_data function, now call objects.all() and populate the data.
-    
+# step 20.2: In views.py, create class for detailview and assign the template_name, call get_context_data function, use **kwargs from the function in get() populate the id using primarykey (Pk)
+
 
 
 
@@ -72,6 +73,17 @@ class ReviewList(TemplateView):
         context = super().get_context_data(**kwargs)
         reviewlist = Review.objects.all()
         context ['reviews'] = reviewlist
+        return context
+
+
+class ReviewDetailview(TemplateView):
+    template_name = 'review/details.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        revied_id = kwargs['id']
+        detailview = Review.objects.get(pk=revied_id) # pk = primarykey
+        context ['reviewdetail'] = detailview
         return context
 
 

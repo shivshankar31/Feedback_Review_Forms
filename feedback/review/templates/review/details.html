@@ -1,0 +1,18 @@
+<!step 20.1: create details.html and extend from base.html!>
+
+
+
+{% extends 'review/base.html' %}
+
+
+{% block title %}Review Detail View{% endblock  %}
+
+{% block content %}
+<hr>
+    <h2> {{ reviewdetail.user_name | title }} </h2>
+    <h3> Rating : {{reviewdetail.rating}}  / 5</h3>
+    <p>{{ reviewdetail.review_text }} </p>
+     
+<hr>
+
+{% endblock  %} 
