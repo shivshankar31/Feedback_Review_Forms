@@ -19,7 +19,8 @@
 # step 20.2: create a class with ListView and assign the html, assign model = Review (model class name), this will populate the list, but change the for loop to "object_list". if you like to user alis name use context_object_name varibal and assign the prefered name.
 # step 21.1: import DetailView form django.views.generic 
 # step 21.2: In views.py, create new class and user DetailView as arg, template_name, model need to assign.
-
+# step 22.1: In views.py, add from django.views.generic.edit import FormView
+# step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
 
 
 
@@ -30,6 +31,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView , DetailView
+from django.views.generic.edit import FormView
 
 # from feedback.review.models import Review
 from .forms import ReviewForm
@@ -39,33 +41,43 @@ from django.views import View
 
 # Create your views here.
 
-class ReviewView(View):
-    def get(self, request):
-        form = ReviewForm()
-        return render(request, 'review/review.html',{
-            'form': form
-        })
+class ReviewView(FormView): 
+    form_class = ReviewForm
+    template_name = 'review/review.html'
+    success_url = 'thankyou'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+# method 1: for get and post
+# class ReviewView(View):
+#     def get(self, request):
+#         form = ReviewForm()
+#         return render(request, 'review/review.html',{
+#             'form': form
+#         })
     
-    def post(self, request):
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/thankyou')
+#     def post(self, request):
+#         form = ReviewForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect('/thankyou')
             
-        return render(request, 'review/review.html', {
-                'form': form
-            })
+#         return render(request, 'review/review.html', {
+#                 'form': form
+#             })
+
+
 
 # method 1 create class and def function 
 # class ThankyouView(View):
 #      def get(self,request):
 #         return render(request, "review/thankyou.html")
 
+
+
 # method 2: import TemplateView
-
-
-
-
 class ThankyouView(TemplateView):
     template_name = 'review/thankyou.html'
 
@@ -86,11 +98,16 @@ class ThankyouView(TemplateView):
 #         context ['reviews'] = reviewlist
 #         return context
 
+
+
 # method 2: list view using ListView method.
 class ReviewList(ListView):
     template_name = 'review/reviewlist.html'
     model = Review # you have change the name to "object_list" in html page.
     context_object_name = 'reviews' #you can give you own name using this variable.
+
+
+
 
 # method 1: detail view
 # class ReviewDetailview(TemplateView):
@@ -109,6 +126,9 @@ class ReviewDetailview(DetailView):
     model = Review # you can use "object"
     context_object_name = 'reviewdetail' # if you like to user alise name insted of object. you can use this.
 
+
+
+
 # def review(request):
 #     if request.method == "POST": # this workd if its a POST method or not
 #         form = forms.ReviewForm(request.POST)
@@ -124,7 +144,6 @@ class ReviewDetailview(DetailView):
 #     return render (request, "review/review.html", {
 #         "form": form
 #     })
-
 
 
 # def thankyou(request):
