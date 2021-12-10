@@ -7,3 +7,9 @@ step 1: setup - create app, html file, view class, urls,py
     step 1.4: create urls.py file and create urlparttens and assign path.
     step 1.5: register the app name in settings.py
     step 1.6: In main project urls.py include the path - "path("profiles/", include("profiles.urls"))"
+
+step 2: 164: make file upload work
+    step 2.1: In create_profile.html, add method, enctype, action, csrf token, name to input.
+(Note: When you are writing client-side code: use multipart/form-data when your form includes any <input type="file"> elements)
+    step 2.2: In views.py, temp create print statemnt to check the file upload is working or not, and add return HTTP responce 
+referance: file upload class - https://docs.djangoproject.com/en/3.2/ref/files/uploads/

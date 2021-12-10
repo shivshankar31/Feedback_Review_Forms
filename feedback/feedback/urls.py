@@ -1,5 +1,5 @@
 # step 1.5: In main project urls.py file, import 'include' function, and add the path of created app urls.py file. 
-
+# step 1.6: In main project urls.py include the path - "path("profiles/", include("profiles.urls"))"
 
 
 
