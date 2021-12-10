@@ -1,4 +1,6 @@
 # step 1.6: In settings.py file, include app name to INSTALLED_APP list.
+# section 12
+# step 1.5: register the app name in settings.py - ' prodiles '
 
 
 
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'profiles',
     'review',
     'django.contrib.admin',
     'django.contrib.auth',

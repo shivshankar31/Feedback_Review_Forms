@@ -1,0 +1,8 @@
+Section 12: File Upload
+
+step 1: setup - create app, html file, view class, urls,py
+    step 1.1: create a new app "python3 mamage.py startapp profiles"
+    step 1.2: copy static and template folder 
+    step 1.3: In views.py, create class and assign the render template
+    step 1.4: create urls.py file and create urlparttens and assign path.
+    step 1.5: register the app name in settings.py
