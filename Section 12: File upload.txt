@@ -23,3 +23,9 @@ step 4: 166: Adding a Form with a Filefield
     step 4.1: create forms.py, create class and assign forms.filefield to user_image.
     step 4.2: In views.py, assign the created form in get function and post function, any how it wont help us to save the image
     step 4.3: in create_profile.html, replace input tag with form intergartion.
+
+step 5: 167: Using Models for File Storage
+    step 5.1: create model with models.filefield(upload_to = "image") image is a folder name where saves the image we upload.
+    step 5.2: create a folder to the root project to save the image "uploads", as mentioned in step 5.1, django will create a image folder inside uploads and save the image file.
+    step 5.3: In settings.py, create MEDIA_ROOT = BASE_DIR /'uploads', which allowes to search the created folder.
+    step 5.4: In views.py, call the created model in post function as shown and save the image.

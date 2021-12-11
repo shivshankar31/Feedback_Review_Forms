@@ -1,6 +1,7 @@
 # step 1.6: In settings.py file, include app name to INSTALLED_APP list.
 # section 12
 # step 1.5: register the app name in settings.py - ' prodiles '
+# step 5.3: In settings.py, create MEDIA_ROOT = BASE_DIR /'uploads', which allowes to search the created folder.
 
 
 
@@ -131,3 +132,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_ROOT = BASE_DIR /"uploads"

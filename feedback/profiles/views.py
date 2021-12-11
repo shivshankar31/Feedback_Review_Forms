@@ -3,19 +3,21 @@
 # step 3.1: In views.py, create a function store_file using with statment as we are handling the file. - this will work only for jpg file.
 # step 3.2: insted of printing the image name, use the function store_file, now create a temp folder and try upload a file now.
 # step 4.2: In views.py, assign the created form in get function and post function, any how it wont help us to save the image
-
+# step 5.4: In views.py, call the created model in post function as shown and save the image.
 
 
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponseRedirect
-from .forms import ProfileForm              
+from .forms import ProfileForm    
+from .models import UserProfile
+
 # Create your views here.
 
-def store_file(file):
-    with open("temp/image.jpg", "wb+") as dest:
-        for chunk in file.chunks():
-            dest.write(chunk)
+# def store_file(file):
+#     with open("temp/image.jpg", "wb+") as dest:
+#         for chunk in file.chunks():
+#             dest.write(chunk)
 
 
 class CreateProfileView(View):
@@ -29,7 +31,9 @@ class CreateProfileView(View):
         saved_form = ProfileForm(request.POST , request.FILES)
 
         if saved_form.is_valid():
-            store_file(request.FILES['image'])
+            profile = UserProfile(image = request.FILES['user_image'] )
+            profile.save()
+            #store_file(request.FILES['image'])
             return HttpResponseRedirect('/profiles')
         
         return render(request, 'profiles/create_profile.html', {
