@@ -29,3 +29,7 @@ step 5: 167: Using Models for File Storage
     step 5.2: create a folder to the root project to save the image "uploads", as mentioned in step 5.1, django will create a image folder inside uploads and save the image file.
     step 5.3: In settings.py, create MEDIA_ROOT = BASE_DIR /'uploads', which allowes to search the created folder.
     step 5.4: In views.py, call the created model in post function as shown and save the image.
+
+step 6: 168: using ImageField
+insted of Filefield, we can use ImageField, it will allow only image file to upload, it wont allow any other file type, also we can specify size of the image.
+    step 6.1: In models.py change Filefield to ImageField.
