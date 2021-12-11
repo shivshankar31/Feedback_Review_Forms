@@ -1,4 +1,7 @@
 <!step 2.1: In create_profile.html, add method, enctype, action, csrf token, name to input.!>
+<!step 4.3: in create_profile.html, replace input tag with form intergartion!>
+
+
 
 {% load static %}
 
@@ -13,7 +16,7 @@
 <body>
   <form action="/profiles/" method = "POST" enctype = "multipart/form-data">
     {% csrf_token %}
-    <input type="file" name = "image" />
+    {{ form }}>
     <button>Upload!</button>
   </form>
 </body>

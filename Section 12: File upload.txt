@@ -18,3 +18,8 @@ step 3: 165: Storing Uploaded Files Native Approach
     step 3.1: In views.py, create a function store_file using with statment as we are handling the file. - this will work only for jpg file.
 (Note: with statment referance: https://www.geeksforgeeks.org/with-statement-in-python/)
     step 3.2: insted of printing the image name, use the function store_file, now create a temp folder and try upload a file now.
+
+step 4: 166: Adding a Form with a Filefield
+    step 4.1: create forms.py, create class and assign forms.filefield to user_image.
+    step 4.2: In views.py, assign the created form in get function and post function, any how it wont help us to save the image
+    step 4.3: in create_profile.html, replace input tag with form intergartion.
