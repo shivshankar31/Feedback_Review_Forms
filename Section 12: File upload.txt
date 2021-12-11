@@ -33,3 +33,7 @@ step 5: 167: Using Models for File Storage
 step 6: 168: using ImageField
 insted of Filefield, we can use ImageField, it will allow only image file to upload, it wont allow any other file type, also we can specify size of the image.
     step 6.1: In models.py change Filefield to ImageField.
+
+step 7: 169: Using a CreateView
+    step 7.1: In views.py. import from django.views.generic.edit import CreateView
+    step 7.2: create new class using CreateView,  now you can remove all other class below, also no need of forms class, just model class is enough.
