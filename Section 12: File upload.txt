@@ -37,3 +37,15 @@ insted of Filefield, we can use ImageField, it will allow only image file to upl
 step 7: 169: Using a CreateView
     step 7.1: In views.py. import from django.views.generic.edit import CreateView
     step 7.2: create new class using CreateView,  now you can remove all other class below, also no need of forms class, just model class is enough.
+
+step 8: 170: accessing the image file, which was uploded
+    step 8.1: create Profile_image.html.
+    step 8.2: In views.py, add new calss using generic ListView.
+    step 8.3: In urls.py, add the path for created view class.
+    step 8.4: in Profile_image.html, add unordered list and use for loop to generate the image, in image tag we have to use loopname.modelfieldname.url to access the images.
+171: step 8.5: In settings.py, add "MEDIA_URL"
+    step 8.6: In main project urls.py, import and assign to urlparttens
+                from django.conf.urls.static import static
+                from django.conf import settings
+                and add static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+                now reload to access the images.

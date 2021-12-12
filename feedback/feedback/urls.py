@@ -1,6 +1,6 @@
 # step 1.5: In main project urls.py file, import 'include' function, and add the path of created app urls.py file. 
 # step 1.6: In main project urls.py include the path - "path("profiles/", include("profiles.urls"))"
-
+# step 8.6: In main project urls.py, import and assign to urlparttens
 
 
 """feedback URL Configuration
@@ -21,9 +21,11 @@ Including another URLconf
 from django import urls
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('review.urls')),
     path('profiles/', include('profiles.urls'))
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

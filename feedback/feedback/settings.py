@@ -2,7 +2,7 @@
 # section 12
 # step 1.5: register the app name in settings.py - ' prodiles '
 # step 5.3: In settings.py, create MEDIA_ROOT = BASE_DIR /'uploads', which allowes to search the created folder.
-
+# step 8.5: In settings.py, add "MEDIA_URL"
 
 
 """
@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_ROOT = BASE_DIR /"uploads"
+MEDIA_URL = '/user-image/'

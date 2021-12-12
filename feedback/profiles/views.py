@@ -6,6 +6,9 @@
 # step 5.4: In views.py, call the created model in post function as shown and save the image.
 # step 7.1: In views.py. import from django.views.generic.edit import CreateView
 # step 7.2: create new class using CreateView,  now you can remove all other class below, also no need of forms class, just model class is enough.
+# step 8.2: In views.py, add new calss using generic ListView.
+
+
 
 from django.shortcuts import render
 from django.views import View
@@ -13,6 +16,8 @@ from django.http import HttpResponseRedirect
 from .forms import ProfileForm    
 from .models import UserProfile
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
+
 
 # Create your views here.
 
@@ -27,6 +32,10 @@ class CreateProfileView(CreateView):
     fields = '__all__'    
     success_url = '/profiles'
     
+class ProfileList(ListView):
+    template_name = 'profiles/profile_image.html'
+    model = UserProfile
+    context_object_name = "profiles"
 
 
 

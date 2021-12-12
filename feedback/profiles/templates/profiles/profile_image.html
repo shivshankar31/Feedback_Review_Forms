@@ -1,0 +1,27 @@
+<!step 8.3: in Profile_image.html, add unordered list and use for loop to generate the image, in image tag we have to use loopname.modelfieldname.url to access the images!>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile View</title>
+</head>
+<body>
+    
+    <ul>
+        {% for img in profiles %}
+            <li>
+                <image src ="{{ img.image.url }}"
+            </li>
+        {% endfor %}
+    </ul>
+
+    
+
+    
+</body>
+</html>
