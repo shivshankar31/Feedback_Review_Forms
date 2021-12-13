@@ -64,3 +64,10 @@ step:10: 178, 179: adding new view , storing data in session
 step 10.1: In details.html, create a fav button inside the form tag, and input type = hidden and value = id
 step 10.2: In views.py, create new class AddFavReview, define post function and retutn the HttpResponceRedirect to same page
 step 10.3: In urls.py, create a new path for the new calss, above the detailview path.
+
+180: Note: In sessions store only simple values like str,dict and bool not objects.
+
+step 11: 181,182: using session date
+step 11.1: In views.py, def get_context_data inside class ReviewDetailview
+step 11.2: save the object and request in a variable, call request.session and compare is_fav
+step 11.3: In detail.html, add if confition 

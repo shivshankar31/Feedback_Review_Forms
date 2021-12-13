@@ -23,7 +23,8 @@
 # step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
 # step 23.1: In views.py, create class and call CreateView as arg, instantiate model, form_class, template_name and success_url.
 # step 10.2: In views.py, create new class AddFavReview, define post function and retutn the HttpResponceRedirect to same page
-
+# step 11.1: In views.py, def get_context_data inside class ReviewDetailview
+# step 11.2: save the object and request in a variable, call request.session and compare is_fav
 
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -138,7 +139,14 @@ class ReviewDetailview(DetailView):
     model = Review # you can use "object"
     context_object_name = 'reviewdetail' # if you like to user alise name insted of object. you can use this.
 
-
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        loaded_review = self.object
+        request = self.request
+        favorite_id = request.session.get('fav_review')
+        context['is_fav'] = favorite_id == str(loaded_review.id)
+        return context
+        
 
 
 class AddFavReview(View):
