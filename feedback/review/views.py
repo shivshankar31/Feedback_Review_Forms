@@ -22,10 +22,12 @@
 # step 22.1: In views.py, add from django.views.generic.edit import FormView
 # step 22.2: create class and use FormVIew also use form_class, template_name and success_url. To save form user form valid function and save the form.
 # step 23.1: In views.py, create class and call CreateView as arg, instantiate model, form_class, template_name and success_url.
+# step 10.2: In views.py, create new class AddFavReview, define post function and retutn the HttpResponceRedirect to same page
 
 
-
-
+from django.http.response import HttpResponse
+from django.shortcuts import render
+from django import views
 from django.db import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -139,6 +141,16 @@ class ReviewDetailview(DetailView):
 
 
 
+class AddFavReview(View):
+    
+    def post(self,request):
+        fav_id = request.POST['review_id']
+        request.session['fav_review'] = fav_id
+        return HttpResponseRedirect('/reviewlist/'+ fav_id)
+
+    
+
+
 # def review(request):
 #     if request.method == "POST": # this workd if its a POST method or not
 #         form = forms.ReviewForm(request.POST)
@@ -158,3 +170,5 @@ class ReviewDetailview(DetailView):
 
 # def thankyou(request):
 #     return render(request, "review/thankyou.html")
+
+

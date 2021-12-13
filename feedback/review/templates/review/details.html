@@ -1,5 +1,5 @@
 <!step 20.1: create details.html and extend from base.html!>
-
+<!step 10.1: In details.html, create a fav button inside the form tag, and input type = hidden and value = id!>
 
 
 {% extends 'review/base.html' %}
@@ -12,7 +12,12 @@
     <h2> {{ reviewdetail.user_name | title }} </h2>
     <h3> Rating : {{reviewdetail.rating}}  / 5</h3>
     <p>{{ reviewdetail.review_text }} </p>
-     
+    <form action="/reviewlist/favorite" method="post">
+        {% csrf_token %}
+        <input type="hidden" name = "review_id" value = {{ reviewdetail.id}}>
+    
+        <button> Add As Favorite</button>
+    </form>
 <hr>
 
 {% endblock  %} 

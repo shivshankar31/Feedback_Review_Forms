@@ -53,8 +53,14 @@ step 8: 170: accessing the image file, which was uploded
 
 
 Section 13: 176, 177 all about sessions
+step:9:
 sessions are meddleware between client and server, which saves cookies in the client browser. 
 normal session cookies saved for 2 weeks, however we can change the time as required in seconds
 on settings you have to make sure 2 things which allowes to work, 1. in MIDDLEWARE- django.contrib.sessions.middleware.SessionMiddleware', 2.  INSTALLED_APPS - 'django.contrib.sessions' are precent.
-    step 13.1: session default can be changed in settings.py at the add SESSION_COOKIE_AGE = 120, i.e 120 = 2min 
+    step 9.1: session default can be changed in settings.py at the add SESSION_COOKIE_AGE = 120, i.e 120 = 2min 
 more options can be found of https://docs.djangoproject.com/en/3.2/topics/http/sessions/
+
+step:10: 178, 179: adding new view , storing data in session
+step 10.1: In details.html, create a fav button inside the form tag, and input type = hidden and value = id
+step 10.2: In views.py, create new class AddFavReview, define post function and retutn the HttpResponceRedirect to same page
+step 10.3: In urls.py, create a new path for the new calss, above the detailview path.

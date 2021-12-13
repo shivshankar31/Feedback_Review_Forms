@@ -4,7 +4,7 @@
 # step 19.4: add new path in urls.py
 # step 20.3: In urls.py, assign the path, also generate the extension using <int:id>.
 # step 21.3: In urls.py, convert <int:id> to <int:pk>
-
+# step 10.3: In urls.py, create a new path for the new calss, above the detailview path
 
 
 from django.urls import path
@@ -14,5 +14,6 @@ urlpatterns = [
     path("", views.ReviewView.as_view()),
     path('thankyou', views.ThankyouView.as_view()),
     path('reviewlist', views.ReviewList.as_view()),
+    path('reviewlist/favorite',views.AddFavReview.as_view()),
     path('reviewlist/<int:pk>',views.ReviewDetailview.as_view())# for methed 2 replace <int:id> to <pk>
 ]
